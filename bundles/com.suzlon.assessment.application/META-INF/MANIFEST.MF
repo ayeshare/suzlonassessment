@@ -12,5 +12,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.intro;bundle-version="3.5.100",
  org.eclipse.ui.intro.universal,
  com.suzlon.assessment.application.ui;bundle-version="1.0.0",
- com.suzlon.assessment.intro;bundle-version="1.0.0"
+ org.eclipse.ui.forms;bundle-version="3.7.101"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

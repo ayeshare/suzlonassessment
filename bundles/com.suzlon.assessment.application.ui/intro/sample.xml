@@ -2,7 +2,7 @@
 <introContent>
   	<extensionContent id="comsuzlonassessmentapplicationui-introExtension" style="css/sample.css" name="Sample Extension" path="overview/@">
 		<group style-id="content-group" id="comsuzlonassessmentapplicationui-introLink-group">
-       		<link label="Lorem ipsum" url="http://www.eclipse.org" id="comsuzlonassessmentapplicationui-introLink" style-id="content-link">
+       		<link label="welcome" url="http://www.eclipse.org" id="comsuzlonassessmentapplicationui-introLink" style-id="content-link">
           		<text>This application demonstrates my Eclipse RCP Skills</text>
        		</link>
        	</group>

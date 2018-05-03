@@ -99,18 +99,15 @@
       </menuContribution>
    </extension>
    <extension
-         point="org.eclipse.ui.intro.configExtension">
-      <configExtension
-            configId="org.eclipse.ui.intro.universalConfig"
-            content="intro/sample.xml">
-      </configExtension>
-   </extension>
-   <extension
          point="org.eclipse.ui.intro">
       <introProductBinding
-            introId="org.eclipse.ui.intro.universal"
+            introId="com.suzlon.assessment.application.intro1"
             productId="com.suzlon.assessment.application.product">
       </introProductBinding>
+      <intro
+            class="com.suzlon.assessment.application.SuzlonAssessmentIntro"
+            id="com.suzlon.assessment.application.intro1">
+      </intro>
    </extension>
 
 </plugin>
