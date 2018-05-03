@@ -1,0 +1,21 @@
+
+
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.suzlon.assessment</groupId>
+    <artifactId>com.suzlon.assessment.releng</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>com.suzlon.assessment</groupId>
+        <artifactId>com.suzlon.assessment.root</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <modules>
+        <module>com.suzlon.assessment.product</module>
+        <module>com.suzlon.assessment.target</module>
+    </modules>
+</project>
+

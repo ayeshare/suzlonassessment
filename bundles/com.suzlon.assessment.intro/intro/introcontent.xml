@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+    <!-- Root page -->
+    <page id="root" style="html/style.css"  style-id="page">	    
+        <title style-id="intro-header">Welcome</title>
+        <text>This application demonstrates my RCP skills</text>
+    </page>
+</introContent>

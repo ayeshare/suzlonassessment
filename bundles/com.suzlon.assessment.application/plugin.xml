@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.suzlon.assessment.application.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.suzlon.assessment.application.Perspective"
+            fixed="true"
+            id="com.suzlon.assessment.application.perspective"
+            name="Perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.suzlon.assessment.application.application"
+            name="Suzlon Assessment">
+         <property
+               name="windowImages"
+               value="icons/eclipse16.png,icons/eclipse32.png,icons/eclipse48.png,icons/eclipse64.png, icons/eclipse128.png,icons/eclipse256.png,icons/eclipse512.png">
+         </property>
+         <property
+               name="introTitle"
+               value="Welcome to Suzlon Assessment">
+         </property>
+         <property
+               name="introDescription"
+               value="This application demonstrates my Eclipse RCP Development skills">
+         </property>
+         <property
+               name="aboutText"
+               value="This is a demo application for suzlon">
+         </property>
+         <property
+               name="aboutImage"
+               value="eclipse128.png">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="com.suzlon.assessment.application.perspective">
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="Window">
+            <command
+                  commandId="org.eclipse.ui.window.togglestatusbar"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.eclipse.ui.views.showView"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.eclipse.ui.window.resetPerspective"
+                  label="Reset Perspective"
+                  style="push">
+            </command>
+            <separator
+                  name="com.suzlon.assessment.application.separator1">
+            </separator>
+            <command
+                  commandId="org.eclipse.ui.window.preferences"
+                  label="Preferences"
+                  style="push">
+            </command>
+         </menu>
+         <menu
+               label="Help">
+            <command
+                  commandId="org.eclipse.ui.help.quickStartAction"
+                  label="Welcome"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.eclipse.ui.help.aboutAction"
+                  label="About"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="intro/sample.xml">
+      </configExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro">
+      <introProductBinding
+            introId="org.eclipse.ui.intro.universal"
+            productId="com.suzlon.assessment.application.product">
+      </introProductBinding>
+   </extension>
+
+</plugin>

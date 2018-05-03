@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+  	<extensionContent id="comsuzlonassessmentapplicationui-introExtension" style="css/sample.css" name="Sample Extension" path="overview/@">
+		<group style-id="content-group" id="comsuzlonassessmentapplicationui-introLink-group">
+       		<link label="Welcome" url="http://www.eclipse.org" id="comsuzlonassessmentapplicationui-introLink" style-id="content-link">
+          		<text>This application demonstrates my Eclipse RCP Skills</text>
+       		</link>
+       	</group>
+  	</extensionContent>
+</introContent>

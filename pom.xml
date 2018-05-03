@@ -1,0 +1,22 @@
+
+
+<project>
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>com.suzlon.assessment</groupId>
+ <artifactId>com.suzlon.assessment.root</artifactId>
+ <version>1.0.0-SNAPSHOT</version>
+ <packaging>pom</packaging>
+ <parent>
+   <groupId>com.suzlon.assessment.tycho</groupId>
+   <artifactId>com.suzlon.assessment.tycho.configuration</artifactId>
+   <version>1.0.0-SNAPSHOT</version>
+  <relativePath>./releng/com.suzlon.assessment.tycho.configuration</relativePath>
+ </parent>
+
+ <modules>
+ <module>bundles</module>
+ <module>features</module>
+ <module>releng</module>
+ </modules>
+</project>
+

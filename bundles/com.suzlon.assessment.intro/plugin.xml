@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.intro.config">
+      <config
+            configurer="org.eclipse.ui.internal.intro.universal.UniversalIntroConfigurer"
+            content="intro/sample.xml"
+            id="com.suzlon.assessment.intro.config1"
+            introId="org.eclipse.ui.intro.universal">
+         <presentation
+               home-page-id="com.suzlon.assessment.intro.presentation1">
+            <implementation
+                  kind="swt">
+            </implementation>
+         </presentation>
+      </config>
+   </extension>
+
+</plugin>

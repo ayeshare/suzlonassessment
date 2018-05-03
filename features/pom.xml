@@ -1,0 +1,20 @@
+
+
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.suzlon.assessment</groupId>
+    <artifactId>com.suzlon.assessment.features</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>com.suzlon.assessment</groupId>
+        <artifactId>com.suzlon.assessment.root</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <modules>
+        <module>com.suzlon.assessment.features.application</module>
+    </modules>
+</project>
+

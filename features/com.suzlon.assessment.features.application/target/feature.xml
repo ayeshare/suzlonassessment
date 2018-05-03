@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.suzlon.assessment.features.application"
+      label="Application"
+      version="1.0.0.201805030846">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="com.suzlon.assessment.application"
+         download-size="119"
+         install-size="205"
+         version="1.0.0.201805030846"
+         unpack="false"/>
+
+   <plugin
+         id="com.suzlon.assessment.application.models"
+         download-size="17"
+         install-size="31"
+         version="0.1.0.201805030846"
+         unpack="false"/>
+
+   <plugin
+         id="com.suzlon.assessment.application.ui"
+         download-size="12"
+         install-size="17"
+         version="1.0.0.201805030846"
+         unpack="false"/>
+
+   <plugin
+         id="com.suzlon.assessment.intro"
+         download-size="2"
+         install-size="1"
+         version="1.0.0.201805030846"
+         unpack="false"/>
+
+</feature>
