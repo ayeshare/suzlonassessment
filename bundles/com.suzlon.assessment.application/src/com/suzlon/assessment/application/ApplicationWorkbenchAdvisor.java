@@ -1,5 +1,6 @@
 package com.suzlon.assessment.application;
 
+import org.eclipse.ui.application.IWorkbenchConfigurer;
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
@@ -12,6 +13,11 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
     public WorkbenchWindowAdvisor createWorkbenchWindowAdvisor(IWorkbenchWindowConfigurer configurer) {
         return new ApplicationWorkbenchWindowAdvisor(configurer);
     }
+	
+	@Override
+	public void initialize(IWorkbenchConfigurer configurer) {
+	    configurer.setSaveAndRestore(false);
+	}
     
     @Override
 	public String getInitialWindowPerspectiveId() {
