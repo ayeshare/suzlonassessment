@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Log
+Bundle-SymbolicName: com.suzlon.assessment.common.log;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.suzlon.assessment.common.log.Activator
+Bundle-Vendor: SUZLON
+Require-Bundle: org.eclipse.core.runtime,
+ ch.qos.logback.classic;bundle-version="1.0.7",
+ ch.qos.logback.core;bundle-version="1.0.7"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: com.suzlon.assessment.common.log
+Bundle-ActivationPolicy: lazy
+Import-Package: org.slf4j;version="1.7.2"

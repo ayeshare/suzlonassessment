@@ -20,10 +20,13 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import model.TurbineModel;
 
 public class TurbineDetailsView {
+	private static final Logger LOG = LoggerFactory.getLogger(TurbineDetailsView.class);
 
 	public static final String ID="com.suzlon.assessment.application.ui.partdescriptor.turbineDetails";
 	private Text txtModel;
@@ -35,8 +38,8 @@ public class TurbineDetailsView {
 	
 	@PostConstruct
 	public void createPartControl(Composite parent) {
+		LOG.debug("in create part control of details view");
 		final Color COLOR_WHITE = new Color(parent.getDisplay(), new RGB(255, 255, 255));
-		System.out.println("Enter in detailsview postConstruct");
 
 		final Composite modelComposite = new Composite(parent, SWT.NONE);
 		modelComposite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
@@ -78,6 +81,7 @@ public class TurbineDetailsView {
 		txtCutoutWindSpeed.setBackground(COLOR_WHITE);
 		txtCutoutWindSpeed.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false));
 		GridLayoutFactory.fillDefaults().generateLayout(parent);
+		LOG.debug("Done creating view");
 		
 	}
 	
@@ -134,6 +138,7 @@ public class TurbineDetailsView {
 
 		// Test if label exists (inject methods are called before PostConstruct)
 		if(txtModel!=null) {
+			LOG.debug("Selected turbine model:"+((TurbineModel)o).getName());
 			txtModel.setText(((TurbineModel)o).getName());
 			txtCutinWindSpeed.setText(((TurbineModel)o).getTurbineDetail().getCutinWindSpeed());
 			txtRatedPower.setText(((TurbineModel)o).getTurbineDetail().getRatedPower());

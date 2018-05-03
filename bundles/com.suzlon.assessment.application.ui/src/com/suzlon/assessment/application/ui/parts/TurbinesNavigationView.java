@@ -21,6 +21,8 @@ import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.suzlon.assessment.application.ui.providers.TurbineLabelProvider;
 import com.suzlon.assessment.application.ui.providers.TurbineModelContentProvider;
@@ -28,6 +30,7 @@ import com.suzlon.assessment.application.ui.providers.TurbineModelContentProvide
 import model.ModelFactory;
 
 public class TurbinesNavigationView {
+	private static final Logger LOG = LoggerFactory.getLogger(TurbinesNavigationView.class);
 	public static final String ID="com.suzlon.assessment.application.ui.partDescFragment.TurbinesNavigationView";
 	private TableViewer modelViewer;
 	@Inject
@@ -35,7 +38,7 @@ public class TurbinesNavigationView {
 
 	@PostConstruct
 	public void createPartControl(Composite parent) {
-		System.out.println("Enter in SampleE4View postConstruct");
+		LOG.debug("Enter in create part control of turbines navigation view");
 
 		final Composite modelComposite = new Composite(parent, SWT.NONE);
 		modelComposite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
@@ -54,6 +57,7 @@ public class TurbinesNavigationView {
 		modelViewer
 				.addSelectionChangedListener(new ISelectionChangedListener() {
 					public void selectionChanged(SelectionChangedEvent event) {
+						LOG.debug("Selection changed in turbines model view");
 						IStructuredSelection selection = (IStructuredSelection) event
 								.getSelection();
 						selectionService.setSelection(selection.getFirstElement());
@@ -66,8 +70,11 @@ public class TurbinesNavigationView {
 		
 		modelViewer.setLabelProvider(new TurbineLabelProvider());
 
+		LOG.debug("Fetching models");
 		modelViewer.setInput(ModelFactory.eINSTANCE.getAllModels());
+		LOG.info("Fetched turbine models");
 		GridLayoutFactory.fillDefaults().generateLayout(parent);
+		LOG.debug("End of create part control in turbines navigation view");
 		
 	}
 

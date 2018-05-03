@@ -15,7 +15,8 @@
         <module>com.suzlon.assessment.application</module>
         <module>com.suzlon.assessment.application.models</module>
         <module>com.suzlon.assessment.application.ui</module>
-        <module>com.suzlon.assessment.intro</module>
+        <module>com.suzlon.assessment.common.log</module>
+        
     </modules>
 </project>
 
