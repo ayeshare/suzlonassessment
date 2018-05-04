@@ -28,7 +28,7 @@
             name="Suzlon Assessment">
          <property
                name="windowImages"
-               value="icons/eclipse16.png,icons/eclipse32.png,icons/eclipse48.png,icons/eclipse64.png, icons/eclipse128.png,icons/eclipse256.png,icons/eclipse512.png">
+               value="icons/eclipse16.png,icons/eclipse32.png,icons/eclipse48.png,icons/eclipse64.png, icons/eclipse128.png,icons/eclipse256.png">
          </property>
          <property
                name="introTitle"
@@ -45,6 +45,10 @@
          <property
                name="aboutImage"
                value="eclipse128.png">
+         </property>
+         <property
+               name="appName"
+               value="Suzlon Assessment">
          </property>
       </product>
    </extension>
