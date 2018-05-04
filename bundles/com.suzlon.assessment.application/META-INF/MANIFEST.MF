@@ -5,6 +5,7 @@ Bundle-SymbolicName: com.suzlon.assessment.application;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: SUZLON
 Require-Bundle: org.eclipse.core.runtime,
+ com.suzlon.assessment.common.log;bundle-version="1.0.0",
  org.eclipse.ui,
  org.eclipse.equinox.ds,
  org.eclipse.equinox.util,

@@ -1,10 +1,15 @@
 package com.suzlon.assessment.common.log;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.osgi.service.datalocation.Location;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -21,7 +26,7 @@ public class Activator implements BundleActivator {
 
 	private static BundleContext context;
 
-	static BundleContext getContext() {
+	public static BundleContext getContext() {
 		return context;
 	}
 
@@ -31,7 +36,7 @@ public class Activator implements BundleActivator {
 	 */
 	public void start(BundleContext bundleContext) throws Exception {
 		Activator.context = bundleContext;
-		//configureLogbackInBundle(bundleContext.getBundle());
+		configureLogbackInBundle(bundleContext.getBundle());
 	}
 
 	private void configureLogbackInBundle(Bundle bundle) throws JoranException, IOException {
@@ -39,10 +44,21 @@ public class Activator implements BundleActivator {
         JoranConfigurator jc = new JoranConfigurator();
         jc.setContext(context);
         context.reset();
-
-        URL logbackConfigFileUrl = FileLocator.find(bundle, new Path("logback.xml"),null);
-        jc.doConfigure(logbackConfigFileUrl.openStream());
+        String logDir = getWorkspaceLocation();
+        context.putProperty("LOG_DIR", logDir);
+        Location configurationLocation = Platform.getInstallLocation();
+        File logbackFile = new File(configurationLocation.getURL().getPath(), "logback.xml");
+        if(logbackFile.exists()) {
+            jc.doConfigure(logbackFile);
+        } else {
+            URL logbackConfigFileUrl = FileLocator.find(bundle, new Path("logback.xml"), null);
+            jc.doConfigure(logbackConfigFileUrl.openStream());
+        }
     }
+	private String getWorkspaceLocation() {
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+        return workspace.getRoot().getLocation().toFile().getAbsolutePath();	
+	}
 	/*
 	 * (non-Javadoc)
 	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)

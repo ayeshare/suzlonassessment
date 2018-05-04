@@ -16,6 +16,38 @@
       [Enter License Description here.]
    </license>
 
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.equinox.ds"/>
+      <import plugin="org.eclipse.equinox.util"/>
+      <import plugin="org.eclipse.equinox.event"/>
+      <import plugin="org.eclipse.ui.intro" version="3.5.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.intro.universal"/>
+      <import plugin="com.suzlon.assessment.application.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.forms" version="3.7.101" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="javax.inject"/>
+      <import plugin="org.eclipse.osgi"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.e4.ui.model.workbench"/>
+      <import plugin="org.eclipse.e4.ui.di"/>
+      <import plugin="org.eclipse.e4.ui.services"/>
+      <import plugin="org.eclipse.e4.core.di.annotations"/>
+      <import plugin="org.eclipse.e4.core.di" version="1.6.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.e4.ui.workbench" version="1.5.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.e4.core.contexts" version="1.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.e4.ui.workbench.swt" version="0.14.101" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.e4.core.services" version="2.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.databinding" version="1.8.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.databinding" version="1.6.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.databinding.beans" version="1.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.databinding.observable" version="1.6.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.databinding.property" version="1.6.100" match="greaterOrEqual"/>
+      <import plugin="com.suzlon.assessment.application.models" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.slf4j.api"/>
+   </requires>
+
    <plugin
          id="com.suzlon.assessment.application"
          download-size="0"
@@ -38,7 +70,7 @@
          unpack="false"/>
 
    <plugin
-         id="com.suzlon.assessment.intro"
+         id="com.suzlon.assessment.common.log"
          download-size="0"
          install-size="0"
          version="0.0.0"

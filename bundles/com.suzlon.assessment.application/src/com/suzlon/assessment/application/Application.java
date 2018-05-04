@@ -6,6 +6,8 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 
+import com.suzlon.assessment.common.log.Activator;
+
 /**
  * This class controls all aspects of the application's execution
  */
@@ -13,6 +15,7 @@ public class Application implements IApplication {
 
 	@Override
 	public Object start(IApplicationContext context) throws Exception {
+		Activator.getContext();
 		Display display = PlatformUI.createDisplay();
 		try {
 			int returnCode = PlatformUI.createAndRunWorkbench(display, new ApplicationWorkbenchAdvisor());

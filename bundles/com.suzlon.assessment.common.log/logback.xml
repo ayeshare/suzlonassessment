@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-
+	<property scope="context" name="LOG_DIRECTORY" value="${LOG_DIR}:-\home\default-log-dir" />
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>
@@ -8,7 +8,8 @@
             </Pattern>
         </layout>
     </appender>
-	<appender name="LOGBACKFILE" class="ch.qos.logback.core.FileAppender">
+	<appender name="LOGFILE" class="ch.qos.logback.core.FileAppender">
+	    <file>${LOG_DIRECTORY}/Application.log</file>
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>
                 %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
@@ -17,10 +18,12 @@
     </appender>
     <logger name="com.suzlon.assessment.logger" level="debug"
         additivity="false">
-        <appender-ref ref="STDOUT" />
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="LOGFILE" />
     </logger>
 
     <root level="debug">
+        <appender-ref ref="LOGFILE" />
         <appender-ref ref="STDOUT" />
     </root>
 
