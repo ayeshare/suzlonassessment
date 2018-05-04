@@ -20,6 +20,17 @@
 
    <windowImages i16="icons/eclipse16.png" i32="icons/eclipse32.png" i48="icons/eclipse48.png" i64="icons/eclipse64.png" i128=" icons/eclipse128.png" i256="icons/eclipse256.png"/>
 
+   <launcher name="suzlonassess">
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <intro introId="com.suzlon.assessment.application.intro1"/>
+
+   <vm>
+   </vm>
+
    <plugins>
       <plugin id="com.ibm.icu"/>
       <plugin id="com.suzlon.assessment.application"/>
