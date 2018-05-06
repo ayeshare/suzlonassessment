@@ -21,9 +21,9 @@
                 <version>${tycho.version}</version>
                 <configuration>
                     <useUIHarness>true</useUIHarness>
-                    <useUIThread>false</useUIThread>
+                    <useUIThread>true</useUIThread>
                     <product>com.suzlon.assessment.product</product>
-                    <application>org.eclipse.e4.ui.workbench.swt.E4Application</application>
+                    <application>com.suzlon.assessment.application.application</application>
                 </configuration>
             </plugin>
         </plugins>

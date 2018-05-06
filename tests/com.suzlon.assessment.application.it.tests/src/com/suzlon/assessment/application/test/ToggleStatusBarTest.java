@@ -6,10 +6,13 @@ package com.suzlon.assessment.application.test;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swtbot.eclipse.finder.SWTWorkbenchBot;
 import org.eclipse.swtbot.eclipse.finder.widgets.SWTBotView;
+import org.eclipse.swtbot.swt.finder.finders.UIThreadRunnable;
 import org.eclipse.swtbot.swt.finder.junit.SWTBotJunit4ClassRunner;
+import org.eclipse.swtbot.swt.finder.results.VoidResult;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotButton;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotMenu;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotShell;
+import org.eclipse.ui.PlatformUI;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -24,6 +27,11 @@ public class ToggleStatusBarTest{
     @BeforeClass
     public static void beforeClass() throws Exception {
         // don't use SWTWorkbenchBot here which relies on Platform 3.x
+    	UIThreadRunnable.syncExec(new VoidResult() {
+    		  public void run() {
+    		    PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell().forceActive();
+    		  }
+    		});
         bot = new SWTWorkbenchBot();
     }
     @Test
