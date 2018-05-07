@@ -36,7 +36,7 @@ public class Activator implements BundleActivator {
 	 */
 	public void start(BundleContext bundleContext) throws Exception {
 		Activator.context = bundleContext;
-		configureLogbackInBundle(bundleContext.getBundle());
+	//	configureLogbackInBundle(bundleContext.getBundle());
 	}
 
 	private void configureLogbackInBundle(Bundle bundle) throws JoranException, IOException {
