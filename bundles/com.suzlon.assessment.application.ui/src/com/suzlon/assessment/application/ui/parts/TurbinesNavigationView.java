@@ -6,11 +6,16 @@ import javax.inject.Named;
 
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.e4.ui.workbench.modeling.EPartService;
+import org.eclipse.e4.ui.workbench.modeling.EPartService.PartState;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.layout.TableColumnLayout;
 import org.eclipse.jface.viewers.ColumnWeightData;
+import org.eclipse.jface.viewers.DoubleClickEvent;
+import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -36,6 +41,8 @@ public class TurbinesNavigationView {
 	@Inject
 	private ESelectionService selectionService;
 
+	@Inject
+	private EPartService partService;
 	@PostConstruct
 	public void createPartControl(Composite parent) {
 		LOG.debug("Enter in create part control of turbines navigation view");
@@ -63,6 +70,26 @@ public class TurbinesNavigationView {
 						selectionService.setSelection(selection.getFirstElement());
 					}
 				});
+		
+		modelViewer.addDoubleClickListener(new IDoubleClickListener() {
+			boolean partExist=false;
+			
+			@Override
+			public void doubleClick(DoubleClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				for(MPart part: partService.getParts() ){
+					if(part.getLabel().equals("Turbine Details")){
+						partService.showPart(part, PartState.ACTIVATE);
+						partExist=true;
+					}
+					if(partExist)break;
+				}
+				IStructuredSelection selection = (IStructuredSelection) event
+						.getSelection();
+				selectionService.setSelection(selection.getFirstElement());
+			}
+		});
 		TurbineModelContentProvider contentProvider = new TurbineModelContentProvider();
 
 		modelViewer.setContentProvider(contentProvider);

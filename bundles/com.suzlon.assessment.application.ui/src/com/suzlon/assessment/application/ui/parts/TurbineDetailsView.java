@@ -9,6 +9,7 @@ import javax.inject.Named;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -34,6 +35,8 @@ public class TurbineDetailsView {
 	private Text txtCutinWindSpeed;
 	private Text txtCutoutWindSpeed;
 	private Text txtRatedWindSpeed;
+	@Inject
+	private ESelectionService selectionService;
 	
 	
 	@PostConstruct
@@ -82,6 +85,8 @@ public class TurbineDetailsView {
 		txtCutoutWindSpeed.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false));
 		GridLayoutFactory.fillDefaults().generateLayout(parent);
 		LOG.debug("Done creating view");
+		setSelection(selectionService.getSelection(TurbinesNavigationView.ID));
+		
 		
 	}
 	
